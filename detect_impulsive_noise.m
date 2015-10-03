@@ -1,5 +1,7 @@
 function [p_impulsive_noise_overall, st_blocks, st_impulses] = detect_impulsive_noise(filename_input, T_block)
 
+addpath('resources');
+
 fs = 44100; % todo: unfix
 
 T_safety_gap = 50e-3;

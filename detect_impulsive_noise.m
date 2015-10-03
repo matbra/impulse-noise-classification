@@ -12,8 +12,8 @@ st_settings = settings();
 b_beat = true;
 
 switch T_block
-    case {1, 0.5, 0.1}
-        tab_model = readtable(fullfile(st_settings.dir_signal_set, st_settings.dir_sub_result_tables, sprintf('model_%.0fms.csv', T_block*1000)), 'ReadRowNames', true);
+    case {1}
+        tab_model = readtable(fullfile('classifier_models', sprintf('model_%.0fms.csv', T_block*1000)), 'ReadRowNames', true);
     otherwise
         error('This block length is not supported.');
 end

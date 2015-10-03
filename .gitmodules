@@ -1,0 +1,3 @@
+[submodule "resources/beat_tracker"]
+	path = resources/beat_tracker
+	url = https://github.com/matbra/beat_tracker.git

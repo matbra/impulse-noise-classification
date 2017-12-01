@@ -3,7 +3,7 @@
 
 The functionality of the method is described in the article [1] that was published in the Journal of the Audio Engineering Society. An accompanying website with example signals can be found [here](http://matbra.org).
 
-The detection algorithm optionally uses a music beat detector that is contained in this repository as a git submodule.
+The classification algorithm optionally uses a music beat detector that is contained in this repository as a git submodule.
 
 This code is licensed under the MIT license.
 

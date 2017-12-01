@@ -1,15 +1,16 @@
 function [p_impulsive_noise_overall, st_blocks, st_impulses] = detect_impulsive_noise(filename_input, T_block)
 
-addpath('resources');
+addpath(genpath('resources'));
 
-fs = 44100; % todo: unfix
+% some information about the audio file
+st_audioinfo = audioinfo(filename_input);
+
+fs = st_audioinfo.SampleRate;
 
 T_safety_gap = 50e-3;
 L_safety_gap = floor(T_safety_gap * fs);
 L_safety_gap = 2 * floor(L_safety_gap/2); % even
 L_safety_gap_half = L_safety_gap / 2;
-
-st_settings = settings();
 
 b_beat = true;
 
@@ -20,8 +21,7 @@ switch T_block
         error('This block length is not supported.');
 end
 
-% determine the size of the file
-st_audioinfo = audioinfo(filename_input);
+
 
 L_block = floor(T_block * st_audioinfo.SampleRate);
 if mod(L_block, 2)
